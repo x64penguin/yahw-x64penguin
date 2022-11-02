@@ -1,0 +1,176 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
+
+body, html {
+    padding: 0;
+    margin: 0;
+    height: 100%;
+}
+
+body {
+    background: rgba(233, 233, 233, 1);
+    font-family: "Open Sans", sans-serif;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+    background-color: black;
+}
+
+h2, h1 {
+    margin: 0;
+}
+
+.content {
+    box-sizing: border-box;
+    padding: 4rem 3rem;
+    min-height: 100%;
+}
+
+.text-light {
+    font-size: 0.9rem;
+    color: grey;
+}
+
+.cart {
+    background: transparent;
+    cursor: pointer;
+}
+
+.cart > img {
+    width: 100%;
+    height: 100%;
+}
+
+.title {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 27px;
+
+    color: #FFFFFF;
+}
+
+.catalog__wrapper {
+    width: 100%;
+    display: flex;
+    gap: 20px;
+}
+
+.block-default {
+    padding: 20px;
+    border-radius: 0.75rem;
+    background-color: #FFFFFF;
+    box-sizing: border-box;
+}
+
+.genres {
+    min-width: 310px;
+    height: 50%;
+}
+
+.genre-item {
+    display: block;
+    padding: 0.5rem 0.2rem;
+    width: 100%;
+    box-sizing: border-box;
+    text-align: left;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 22px;
+    background: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.genre-item_active {
+    font-weight: 700;
+}
+
+.catalog { 
+    width: 100%;
+}
+
+.book-card {
+    padding: 20px;
+    margin-bottom: 16px;
+    display: flex;
+}
+
+.book-card__description {
+    width: 100%;
+}
+
+.book-card__description > h2:nth-child(1) {
+    margin-bottom: 1rem;
+}
+
+.book-card__description > h2:nth-child(2) {
+    margin-top: auto;
+}
+
+.book-card__description > span {
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.book-card__amount {
+    display: flex;
+    gap: 24px;
+    margin: auto 0;
+    font-size: 1.5rem;
+    color: rgba(0, 0, 0, 0.5);
+    font-weight: 700;
+}
+
+.crement-btn {
+    width: 38px;
+    height: 38px;
+    color: #FFF;
+    background-color: #000;
+    border: none;
+    border-radius: 8px;
+    appearance: none;
+    padding: 0;
+    cursor: pointer;
+}
+
+.crement-btn:disabled {
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+.crement-btn > img {
+    margin: auto;
+}
+
+.book-card__amount > span {
+    line-height: 2rem;
+}
+
+
+.book-description {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 1rem;
+}
+
+.annotation {
+    height: fit-content;
+}
+
+.review {
+    margin-bottom: 16px;
+}
+
+.review > div {
+    display: flex;
+    justify-content: space-between;
+}
+
+.review > span {
+    margin-top: 1rem;
+    display: block;
+}
