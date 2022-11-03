@@ -4,6 +4,7 @@ import minus_icon from "../assets/minus.svg"
 import plus_icon from "../assets/plus.svg"
 import { useState } from "react"
 
+// @FIXME
 export const getStars = (rating) => {
     let stars = [];
     for (let i = 0; i < 5; i++) stars.push(<img style={{marginRight: "7px"}} src={i < rating ? star_filled : star_empty}/>);
