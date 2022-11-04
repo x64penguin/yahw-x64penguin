@@ -12,7 +12,7 @@ export const BookPage = (props) => {
         </div>
         
         <div className="book-reviews">
-            {props.book.reviews.map((review) => <Review review={review}/>)}
+            {props.book.reviews.map((review) => <Review key={review.id} review={review}/>)}
         </div>
     </div>
 }

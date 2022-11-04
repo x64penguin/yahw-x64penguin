@@ -6,12 +6,21 @@ import { useState } from "react"
 
 export const getStars = (rating) => {
     let stars = [];
-    for (let i = 0; i < 5; i++) stars.push(<img style={{marginRight: "7px"}} src={i < rating ? star_filled : star_empty}/>);
+    for (let i = 0; i < 5; i++) 
+        stars.push(<img key={i} style={{marginRight: "7px"}} src={i < rating ? star_filled : star_empty} alt="rating star"/>);
     return stars;
 }
 
 export const BookCard = (props) => {
     const [itemAmount, setItemAmount] = useState(0);
+
+    let item_increment = () => {
+        setItemAmount(itemAmount + 1);
+    }
+
+    let item_decrement = () => {
+        setItemAmount(Math.max(itemAmount - 1, 0));
+    }
 
     return <div className="book-card block-default">
         <div className="book-card__description">
@@ -24,11 +33,11 @@ export const BookCard = (props) => {
             <h2>{props.book.price}₽</h2>
         </div>
         <div className="book-card__amount">
-            <button className="crement-btn" disabled={itemAmount == 0} onClick={() => setItemAmount(Math.max(itemAmount - 1, 0))}>
+            <button className="crement-btn" disabled={itemAmount == 0} onClick={item_decrement}>
                 <img src={minus_icon} width="18px" height="1.5px"/>
             </button>
             <span>{itemAmount}</span>
-            <button className="crement-btn" onClick={() => setItemAmount(itemAmount + 1)}>
+            <button className="crement-btn" onClick={item_increment}>
                 <img src={plus_icon} width="18px" height="18px"/>
             </button>
         </div>

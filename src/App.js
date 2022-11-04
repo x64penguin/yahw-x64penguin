@@ -8,6 +8,7 @@ function App() {
   return (
     <Layout>
       <CatalogPage categories={mock_categories}/>
+      {/* <BookPage book={mock_categories[0].books[0]}/> */}
     </Layout>
   );
 }
