@@ -6,18 +6,20 @@ import { categories as mock_categories } from './constants/mock';
 import { Provider } from 'react-redux';
 import { store } from "./store/index";
 import { BrowserRouter, Route, Router, Routes } from 'react-router-dom';
+import { CartPage } from './pages/CartPage';
 
 function App() {
   return (
     <Provider store={store}>
-      <Layout>
-        <BrowserRouter>
+      <BrowserRouter>
+        <Layout>
           <Routes>
             <Route index element={<CatalogPage/>}/>
             <Route path="/book/:id" element={<BookPage/>}/>
+            <Route path="/cart" element={<CartPage/>}/>
           </Routes>
-        </BrowserRouter>
-      </Layout>
+        </Layout>
+      </BrowserRouter>
     </Provider>
   );
 }

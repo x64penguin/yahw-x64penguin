@@ -13,16 +13,21 @@ export const CatalogPage = () => {
 
     const categories = useSelector((state) => selectCategories(state));
     const [activeGenre, setActiveGenre] = useState(0);
-    const loaded = useSelector((state) => selectIsCategoriesLoaded(state));
 
-    if (!loaded) {
+    if (categories.length == 0) {
         return;
     }
 
     return <div className="catalog__wrapper">
         <aside className="genres block-default">
             {
-                categories.map((category, index) => <button key={category.id} className={categories[activeGenre].name == category.name ? "genre-item genre-item_active" : "genre-item"} onClick={() => setActiveGenre(index)}>{category.name}</button>)
+                categories.map((category, index) => 
+                <button 
+                    key={category.id} 
+                    className={categories[activeGenre].name == category.name ? "genre-item genre-item_active" : "genre-item"} 
+                    onClick={() => setActiveGenre(index)}>
+                        {category.name}
+                </button>)
             }
         </aside>
         <Books activeId={categories[activeGenre].id}/>
