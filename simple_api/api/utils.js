@@ -3,4 +3,4 @@ const reply = (res, body, timeout = 1000, status = 200) =>
     res.status(status).json(body);
   }, timeout);
 
-module.exports = { reply, findAllBackrefs };
+module.exports = { reply };

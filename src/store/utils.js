@@ -1,24 +1,22 @@
 export const findAllBackrefs = (table, id) => {
-    const result = [];
+    let result = [];
   
-    for (entity in table) {
+    table.forEach((entity, index) => {
       if (entity.backref == id) {
         result.push(entity);
       }
-    }
+    })
   
     return result;
   };
 
-export const prepareData = (data) => {
-    let entities = {};
-    let ids = [];
-
-    for (item in data) {
-        let id = item.id;
-        entities[id] = item;
-        ids.push(id);
-    }
-
-    return {entities, ids};
-}
+  export const prepareData = (items) => {
+    return {
+      entities: items.reduce((acc, cinema) => {
+        acc[cinema.id] = cinema;
+        return acc;
+      }, {}),
+      ids: items.map(({ id }) => id),
+    };
+  };
+  

@@ -24,7 +24,7 @@ export const BookCard = (props) => {
 
     return <div className="book-card block-default">
         <div className="book-card__description">
-            <h2>{props.book.name}</h2>
+            <a href={"/book/" + props.book.id}><h2>{props.book.name}</h2></a>
             <span className="text-light">{ props.book.authors.join(", ") }</span>
             <span className="text-light">{ props.book.genre }</span>
             <div className="book-card__rating">

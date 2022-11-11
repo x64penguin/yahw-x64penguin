@@ -1,6 +1,6 @@
 const router = require("express").Router();
 const { categories, books, reviews } = require("./mock");
-const { reply, findAllBackrefs } = require("./utils");
+const { reply } = require("./utils");
 
 // router.get("/cinemas", (req, res, next) => {
 //   reply(res, cinemas);
@@ -44,19 +44,11 @@ router.get("/categories", (req, res, next) => {
 })
 
 router.get("/books", (req, res, next) => {
-  const { categoryId } = req.query;
-  if (categoryId) {
-    return reply(findAllBackrefs(books, categoryId));
-  }
-  return reply(res, books);
+  reply(res, books);
 })
 
 router.get("/reviews", (req, res, next) => {
-  const { bookId } = res.query;
-  if (bookId) {
-    return reply(findAllBackref(reviews, bookId));
-  }
-  return reviews;
+  reply(res, reviews);
 })
 
 module.exports = router;
